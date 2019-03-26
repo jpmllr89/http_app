@@ -1,4 +1,6 @@
 import requests as r
+import random as rand
+
 
 url = "https://icanhazdadjoke.com/search"
 
@@ -21,8 +23,9 @@ while True:
         break
     else:
         print("There are " + str(json_data["total_jokes"]) + " jokes")
-        print("Here is one: \n" +json_data["results"][0]['joke'])
+        result_num = rand.choice(range(0, json_data["total_jokes"]))
+        print("Here is one: \n" +json_data["results"][result_num]['joke'])
         another = input("Would you like to search another?(y/n)")
-        if another == "n":
+        if another == "y":
             break
 #print(json_data)
