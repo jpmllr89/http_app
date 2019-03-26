@@ -29,4 +29,3 @@ while True:
         another = input("Would you like to search another?(y/n)")
         if another == "n":
             break
-#print(json_data)
